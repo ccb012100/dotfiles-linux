@@ -1,4 +1,4 @@
 # dotfiles-linux
 Configuration files for Linux
 
-`rsync-dotfiles` script syncs user's dotfiles into the repo's `dotfiles` folder.
+Run the `rsync-dotfiles` script to sync the specified dotfiles from `$HOME` into the repo's `dotfiles` folder.
