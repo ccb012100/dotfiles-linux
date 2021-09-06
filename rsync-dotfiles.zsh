@@ -18,6 +18,10 @@ rsync -avuP --progress \
       ~/.dotfiles/dotfiles/
 
 rsync -avuP --progress \
+      ~/.gitconfig \
+      ~/.dotfiles/dotfiles/
+
+rsync -avuP --progress \
       ~/.tmux.conf \
       ~/.dotfiles/dotfiles/
 
