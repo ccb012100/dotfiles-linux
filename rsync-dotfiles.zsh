@@ -42,11 +42,11 @@ rsync -avuP --progress \
 ##############
 
 rsync -avuP --progress \
-      ~/.zsh/zsh-aliases \
+      ~/.zsh/aliases.zsh \
       ~/.dotfiles/dotfiles/.zsh/
 
 rsync -avuP --progress \
-      ~/.zsh/zsh-unalias \
+      ~/.zsh/unalias.zsh \
       ~/.dotfiles/dotfiles/.zsh/
 
 rsync -avuP --progress \

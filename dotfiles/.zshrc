@@ -5,10 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# zsh config
-# locted in ~/.zshrc
-# for setting Homebrew version to run as default shell, see:
-# https://rick.cogley.info/post/use-homebrew-zsh-instead-of-the-osx-default/
 export PATH=~/.dotnet/tools:~/go/bin:~/tools:~/.local/bin:$PATH
 
 export ALTERNATE_EDITOR=""
@@ -74,7 +70,6 @@ if [ -n "$RANGER_LEVEL" ]; then export PS1="[ranger]$PS1"; fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-
 fpath=(/usr/local/share/zsh-completions $fpath) # activate zsh-completions
 fpath=(~/.zsh/zsh-completions $fpath)           # activate zsh-completions
 
@@ -111,6 +106,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source ~/.zsh/zsh-aliases # custom aliases
-[[ -f ~/.zsh/zsh-machine-specific-aliases ]] && source ~/.zsh/zsh-machine-specific-aliases # not in source control
+source ~/.zsh/aliases.zsh # custom aliases
+[[ -f ~/.zsh/machine-specific-aliases.zsh ]] && source ~/.zsh/machine-specific-aliases.zsh # not in source control
 

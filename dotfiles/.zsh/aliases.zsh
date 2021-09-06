@@ -49,8 +49,8 @@ alias dc='docker compose'
 # golang
 alias gr='go run .'
 
-# chezmoi
-alias cz='chezmoi'
-
 # dotfiles configuration management
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias sync-dotfiles='~/.dotfiles/rsync-dotfiles.zsh'
+
+# directory aliases
+export ccb=~/ccb012100
