@@ -15,15 +15,15 @@
 
 rsync -avuP --progress \
       ~/.zshrc \
-      ~/.dotfiles/dotfiles/
+      ~/.dotfiles/HOME/
 
 rsync -avuP --progress \
       ~/.gitconfig \
-      ~/.dotfiles/dotfiles/
+      ~/.dotfiles/HOME/
 
 rsync -avuP --progress \
       ~/.tmux.conf \
-      ~/.dotfiles/dotfiles/
+      ~/.dotfiles/HOME/
 
 #################
 # $HOME/.config #
@@ -31,15 +31,15 @@ rsync -avuP --progress \
 
 rsync -avuP --progress \
       ~/.config/bat/bat.conf \
-      ~/.dotfiles/dotfiles/.config/bat/
+      ~/.dotfiles/HOME/.config/bat/
 
 rsync -avuP --progress \
       ~/.config/gh/config.yml \
-      ~/.dotfiles/dotfiles/.config/gh/
+      ~/.dotfiles/HOME/.config/gh/
 
 rsync -avuP --progress \
       ~/.config/nvim/init.vim \
-      ~/.dotfiles/dotfiles/.config/nvim/
+      ~/.dotfiles/HOME/.config/nvim/
 
 ##############
 # $HOME/.zsh #
@@ -47,12 +47,12 @@ rsync -avuP --progress \
 
 rsync -avuP --progress \
       ~/.zsh/aliases.zsh \
-      ~/.dotfiles/dotfiles/.zsh/
+      ~/.dotfiles/HOME/.zsh/
 
 rsync -avuP --progress \
       ~/.zsh/unalias.zsh \
-      ~/.dotfiles/dotfiles/.zsh/
+      ~/.dotfiles/HOME/.zsh/
 
 rsync -avuP --progress \
       ~/.zsh/zsh-completions \
-      ~/.dotfiles/dotfiles/.zsh/
+      ~/.dotfiles/HOME/.zsh/
