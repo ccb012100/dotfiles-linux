@@ -50,7 +50,7 @@ alias dc='docker compose'
 alias gr='go run .'
 
 # dotfiles configuration management
-alias sync-dotfiles='~/.dotfiles/rsync-dotfiles.zsh'
+alias dotfiles-upgrade='~/.dotfiles/rsync-dotfiles.zsh'
 
 # directory aliases
 export ccb=~/ccb012100
