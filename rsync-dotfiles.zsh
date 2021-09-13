@@ -56,3 +56,15 @@ rsync -avuP --progress \
 rsync -avuP --progress \
       ~/.zsh/zsh-completions \
       ~/.dotfiles/HOME/.zsh/
+
+##############
+# $HOME/.gnupg #
+##############
+
+rsync -avuP --progress \
+      ~/.gnupg/gpg.conf \
+      ~/.dotfiles/HOME/.gnupg/
+
+rsync -avuP --progress \
+      ~/.gnupg/gpg-agent.conf \
+      ~/.dotfiles/HOME/.gnupg/
