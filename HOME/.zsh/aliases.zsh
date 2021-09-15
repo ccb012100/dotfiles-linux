@@ -6,10 +6,14 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
 # ls
+alias l='ls'
 alias la='ls -a'
 alias ll='ls -l'
 alias lal='ls -al'
 alias lla='ls -la'
+
+alias ls='exa'               # use exa as ls replacement
+alias tree='exa --tree'
 
 alias lec='echo $?'          # last exit code
 alias cls='clear'            # clear screen
@@ -17,20 +21,14 @@ alias cls='clear'            # clear screen
 alias sesh='tmux new-session -A -s sesh'
 
 alias g='git'
-alias gs='git-status'
-alias gitpub='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
+
+alias grep='grep --colo=auto'
 
 alias bat='batcat'
 alias jq='jq -C'             # colorize json
-alias l='exa'
-alias ls='exa'               # use exa as ls replacement
-alias ripgrep='rg'
-alias tree='exa --tree --level=2'
-alias pshell='pwsh'
 alias powershell='pwsh'
-#alias d='docker'
 alias py='python3'
-alias hi='highlight --style base16/gruvbox-dark-hard'
+alias ripgrep='rg'
 
 # use Neovim instad of Vim
 alias v='nvim'
@@ -51,6 +49,7 @@ alias gr='go run .'
 
 # dotfiles configuration management
 alias dotfiles-upgrade='~/.dotfiles/rsync-dotfiles.zsh'
+alias cd-dotfiles='cd ~/.dotfiles'
 
 # directory aliases
 export ccb=~/ccb012100
