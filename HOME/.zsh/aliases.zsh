@@ -51,5 +51,8 @@ alias gr='go run .'
 alias dotfiles-upgrade='~/.dotfiles/rsync-dotfiles.zsh'
 alias cd-dotfiles='cd ~/.dotfiles'
 
+# open current directory in VS Code
+alias c.='code .'
+
 # directory aliases
 export ccb=~/ccb012100
