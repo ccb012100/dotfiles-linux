@@ -3,11 +3,11 @@
     autocrlf = input
     filemode = false
 [user]
-	name = Christopher Bocardo
+    name = Christopher Bocardo
     email = ccb012100@users.noreply.github.com
-	signingkey = 3B4945B2F8AEB107
+    signingkey = 3B4945B2F8AEB107
 [commit]
-	gpgsign = true
+    gpgsign = true
 [color]
     ui = true
 [pull]
@@ -46,7 +46,7 @@
 [diff]
     tool = vscode
 [gpg]
-	program = gpg
+    program = gpg
 [pager]
     diff = delta
     log = delta
