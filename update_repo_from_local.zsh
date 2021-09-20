@@ -25,6 +25,10 @@ rsync -avuP --progress \
       ~/.tmux.conf \
       ~/.dotfiles/HOME/
 
+rsync -avuP --progress \
+      ~/.vimrc \
+      ~/.dotfiles/HOME/
+
 #################
 # $HOME/.config #
 #################
