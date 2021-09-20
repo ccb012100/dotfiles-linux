@@ -50,5 +50,6 @@ autocmd InsertEnter * set cursorline cursorcolumn norelativenumber
 autocmd InsertLeave * set nocursorline nocursorcolumn relativenumber
 
 syntax enable
+let g:gruvbox_contrast_dark = 'hard'
 autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark " Setting dark mode
