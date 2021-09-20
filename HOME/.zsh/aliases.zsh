@@ -30,12 +30,6 @@ alias powershell='pwsh'
 alias py='python3'
 alias ripgrep='rg'
 
-# use Neovim instad of Vim
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
-alias vimdiff='nvim -d'
-
 # cargo (rust)
 alias cr='cargo run'
 alias cb='cargo build'
