@@ -49,9 +49,7 @@ set rtp+=/usr/local/opt/fzf
 autocmd InsertEnter * set cursorline cursorcolumn norelativenumber
 autocmd InsertLeave * set nocursorline nocursorcolumn relativenumber
 
-"hi Cursor ctermbg=black     " current line bg=black in Normal mode
-"hi Normal ctermbg=darkgray  " current line bg=darkgray in Insert moden
-
+# install Dracula: https://draculatheme.com/vim
 packadd! dracula
 syntax enable
 colorscheme dracula
