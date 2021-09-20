@@ -49,7 +49,6 @@ set rtp+=/usr/local/opt/fzf
 autocmd InsertEnter * set cursorline cursorcolumn norelativenumber
 autocmd InsertLeave * set nocursorline nocursorcolumn relativenumber
 
-# install Dracula: https://draculatheme.com/vim
-packadd! dracula
 syntax enable
-colorscheme dracula
+autocmd vimenter * ++nested colorscheme gruvbox
+set background=dark " Setting dark mode
