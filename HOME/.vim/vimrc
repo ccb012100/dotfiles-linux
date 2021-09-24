@@ -32,6 +32,7 @@ set tabstop=4
 set termguicolors    " true color terminal
 set ttimeoutlen=50   " switc
 set wildmenu         " visual autocomplete for command menuh quick between modes
+set ignorecase       " default to case insensitive searching
 
 let g:rainbow_active = 1    " turn on rainbow brackets
 
