@@ -12,7 +12,6 @@
 #########
 # $HOME #
 #########
-
 rsync -avuP --progress \
       ~/.dotfiles/HOME/.zshrc \
       ~/
@@ -25,14 +24,16 @@ rsync -avuP --progress \
       ~/.dotfiles/HOME/.tmux.conf \
       ~/
 
+##############
+# $HOME/.vim #
+##############
 rsync -avuP --progress \
-      ~/.dotfiles/HOME/.vimrc \
-      ~/
+      ~/.dotfiles/HOME/.vim/vimrc \
+      ~/.vim/
 
 #################
 # $HOME/.config #
 #################
-
 rsync -avuP --progress \
       ~/.dotfiles/HOME/.config/bat/bat.conf \
       ~/.config/bat/
@@ -48,7 +49,6 @@ rsync -avuP --progress \
 ##############
 # $HOME/.zsh #
 ##############
-
 rsync -avuP --progress \
       ~/.dotfiles/HOME/.zsh/aliases.zsh \
       ~/.zsh/
@@ -60,11 +60,9 @@ rsync -avuP --progress \
 rsync -avuP --progress \
       ~/.dotfiles/HOME/.zsh/zsh-completions \
       ~/.zsh/
-
 ##############
 # $HOME/.gnupg #
 ##############
-
 rsync -avuP --progress \
       ~/.dotfiles/HOME/.gnupg/gpg.conf \
       ~/.gnupg/
