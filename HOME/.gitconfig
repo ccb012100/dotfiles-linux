@@ -2,10 +2,6 @@
     editor = vim
     autocrlf = input
     filemode = false
-[user]
-    name = Christopher Bocardo
-    email = ccb012100@users.noreply.github.com
-    signingkey = 3B4945B2F8AEB107
 [commit]
     gpgsign = true
 [color]
@@ -70,3 +66,11 @@
     hunk-header-file-style = red
     hunk-header-line-number-style = "#067a00"
     hunk-header-style = file line-number syntax
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[includeIf "gitdir:~/ccb012100/"]
+    # set all repos in ~/ccb012100 to use personal username/email
+    path = ~/ccb012100/.gitconfig
+[includeIf "gitdir:~/repos/"]
+    # set all repos in ~/repos to use work username/email
+    path = ~/repos/.gitconfig
