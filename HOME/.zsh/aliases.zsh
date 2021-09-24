@@ -13,6 +13,7 @@ alias ll='ls -l'
 alias lal='ls -al'
 alias lla='ls -la'
 
+alias aptup='sudo apt update && sudo apt upgrade'
 alias bat='batcat'
 alias c.='code .'              # open current directory in VS Code
 alias cls='clear'              # clear screen
