@@ -30,6 +30,7 @@
     main = checkout main
     master = checkout master
     pub = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+    ri = rebase --interactive
     ruo = remote update origin --prune # update local list of remote branches
     s = status
     # resets the previous commit but

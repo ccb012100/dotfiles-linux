@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=~/.dotnet/tools:~/go/bin:~/tools:~/.local/bin:$PATH
+export PATH=~/.dotnet/tools:/usr/local/go/bin:~/tools:~/.local/bin:$PATH
 
 export ALTERNATE_EDITOR=""
 export EDITOR="vim"                         # $EDITOR opens in terminal
@@ -104,3 +104,6 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/aliases.zsh # custom aliases
 [[ -f ~/.zsh/machine-specific-aliases.zsh ]] && source ~/.zsh/machine-specific-aliases.zsh # not in source control
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
