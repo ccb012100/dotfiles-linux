@@ -13,6 +13,8 @@ alias la='ls -a'
 alias ll='ls -l'
 alias lal='ls -al'
 alias lla='ls -la'
+alias llt='exa -l -t modified --sort newest'
+alias llat='exa -al -t modified --sort newest'
 
 alias aptup='sudo apt update && sudo apt upgrade'
 alias cls='clear'                           # clear screen
