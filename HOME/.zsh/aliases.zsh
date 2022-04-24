@@ -16,25 +16,32 @@ alias lla='ls -la'
 alias llt='exa -l -t modified --sort newest'
 alias llat='exa -al -t modified --sort newest'
 
-alias aptup='sudo apt update && sudo apt upgrade'
+## built-in tools
+alias apt-up='sudo apt update && sudo apt upgrade'
 alias cls='clear'                           # clear screen
-alias g='git'
 alias grep='grep --color=auto'
 alias lec='echo $?'                         # last exit code
 alias print-path='echo ${PATH//:/$"\n"}'    # print $PATH in human-readable format
-alias sesh='tmux new-session -A -s sesh'
 
-alias bat='batcat'
-alias c.='code .'                           # open current directory in VS Code
-alias dc='docker compose'
-alias dot-b='dotnet build'
-alias dot-r='dotnet run'
-alias gr='go run .'
-alias jq='jq -C'                            # colorize json
-alias powershell='pwsh'
-alias py='python3'
-alias ripgrep='rg'
+# external tools
 alias tree='exa --tree'
+alias sesh='tmux new-session -A -s sesh'
+alias ripgrep='rg'
+alias py='python3'
+alias powershell='pwsh'
+alias jq='jq -C'                            # colorize json
+alias gf='git forgit'
+alias gr='go run .'
+alias g='git'
+alias dot-r='dotnet run'
+alias dot-b='dotnet build'
+alias dc='docker compose'
+alias c.='code .'                           # open current directory in VS Code
+alias bat='batcat'
+
+# .zshrc
+alias zedit="vim $HOME/.zshrc"
+alias zsource="source $HOME/.zshrc"
 
 # cargo (rust)
 alias cr='cargo run'
@@ -46,3 +53,6 @@ alias cd-dotfiles='cd ~/.dotfiles'
 
 # directory aliases
 export ccb=~/ccb012100
+
+# global aliases
+alias -g zf='| fzf' # pipe into fzf

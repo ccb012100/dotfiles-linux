@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=~/.dotnet/tools:/usr/local/go/bin:~/tools:~/.local/bin:$PATH
+export PATH=~/.forgit/bin:~/.dotnet/tools:/usr/local/go/bin:~/tools:~/.local/bin:$PATH
 
 export ALTERNATE_EDITOR=""
 export EDITOR="vim"                         # $EDITOR opens in terminal
@@ -77,11 +77,13 @@ bindkey -e                                      # emacs key-bindings
 bindkey '^y' autosuggest-accept                 # for zsh-autosuggestions
 bindkey '^i' expand-or-complete
 
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_COMPLETION_TRIGGER=''
-bindkey '^t' fzf-completion
-bindkey '^i' $fzf_default_completion
-# Options to fzf command
+export FZF_COMPLETION_TRIGGER=';;'
+# use ripgrep instead of find
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--height=75% --cycle --multi --info=inline --border --preview-window=:hidden --preview 'batcat --style=numbers --color=always {}' --bind '?:toggle-preview'"
 export FZF_COMPLETION_OPTS='--border --info=inline'
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
@@ -107,3 +109,6 @@ source ~/.zsh/aliases.zsh # custom aliases
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export FORGIT_NO_ALIASES=1
+source ~/.forgit/forgit.plugin.zsh
