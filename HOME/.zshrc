@@ -112,3 +112,5 @@ export NVM_DIR="$HOME/.nvm"
 
 export FORGIT_NO_ALIASES=1
 source ~/.forgit/forgit.plugin.zsh
+
+source /home/cbocardo/.config/broot/launcher/bash/br
