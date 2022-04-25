@@ -5,11 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# $PATH
 export PATH=~/.forgit/bin:~/.dotnet/tools:/usr/local/go/bin:~/tools:~/.local/bin:$PATH
 
 export ALTERNATE_EDITOR=""
 export EDITOR="vim"                         # $EDITOR opens in terminal
-export VISUAL="vim"                         # $VISUAL opens in GUI mode
+export VISUAL="code"                        # $VISUAL opens in GUI mode
 export DEFAULT_USER=cbocardo
 export GPG_TTY=$(tty)                       # for gpg
 
@@ -17,22 +18,22 @@ HISTFILE=~/.zsh/zsh_history
 HISTSIZE=50000
 SAVEHIST=10000
 
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_ignore_space
-setopt hist_verify
-setopt inc_append_history
-setopt share_history
-setopt hist_reduce_blanks
-setopt hist_find_no_dups
-
-setopt noclobber                            # don't overwrite existing files
-setopt ignoreeof                            # Ctrl-D won't kill the session
 setopt auto_cd
-setopt correctall                           # spelling correction for commands
 setopt cdable_vars                          # directory aliases for cd command
 setopt complete_in_word                     # complete within a word/phrase
+setopt correctall                           # spelling correction for commands
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_verify
+setopt ignoreeof                            # Ctrl-D won't kill the session
+setopt inc_append_history
 setopt no_case_glob                         # case-insensitive globbing
+setopt noclobber                            # don't overwrite existing files
+setopt share_history
+
 
 # directory history
 # see http://zsh.sourceforge.net/Intro/intro_6.html
@@ -55,15 +56,7 @@ zstyle ':completion:*' expand prefix suffix # partial completion suggestions
 # from https://scriptingosx.com/2019/07/moving-to-zsh-part-5-completions/
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
-# functions to cd then ls in one step
-function cls { cd "$@" && ls }
-function cla { cd "$@" && ls -a }
-function cll { cd "$@" && ls -l }
-function clal { cd "$@" && ls -al }
-function clla { cd "$@" && ls -la }
 
-# open new emacs-frame
-function new-frame { emacsclient -e "(new-frame)" }
 
 # show when running in a shell that was spawned by ranger
 if [ -n "$RANGER_LEVEL" ]; then export PS1="[ranger]$PS1"; fi
@@ -77,40 +70,23 @@ bindkey -e                                      # emacs key-bindings
 bindkey '^y' autosuggest-accept                 # for zsh-autosuggestions
 bindkey '^i' expand-or-complete
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_COMPLETION_TRIGGER=';;'
-# use ripgrep instead of find
-export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS="--height=75% --cycle --multi --info=inline --border --preview-window=:hidden --preview 'batcat --style=numbers --color=always {}' --bind '?:toggle-preview'"
-export FZF_COMPLETION_OPTS='--border --info=inline'
-
-# Use fd (https://github.com/sharkdp/fd) instead of the default find
-# command for listing path candidates.
-# - The first argument to the function ($1) is the base path to start traversal
-# - See the source code (completion.{bash,zsh}) for the details.
-_fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
-}
-
-# Use fd to generate the list for directory completion
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
-}
+source ~/.zsh/fzf_config.zsh # load fzf
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/broot/launcher/bash/br
+
+# ~/.zsh directory
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 source ~/.zsh/aliases.zsh # custom aliases
-[[ -f ~/.zsh/machine-specific-aliases.zsh ]] && source ~/.zsh/machine-specific-aliases.zsh # not in source control
+source ~/.zsh/funcs.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+# forgit
 export FORGIT_NO_ALIASES=1
 source ~/.forgit/forgit.plugin.zsh
 
-source /home/cbocardo/.config/broot/launcher/bash/br
+[[ -f ~/.zsh/machine-specific-aliases.zsh ]] && source ~/.zsh/machine-specific-aliases.zsh # not in source control
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
