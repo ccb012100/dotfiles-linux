@@ -1,7 +1,12 @@
-"" Configfor Neovim
+"" Config for Neovim
 "" place in `~/.config/nvim/init.vim`
 set encoding=utf-8
 scriptencoding utf-8
+
+"" Exit Insert mode
+inoremap jj <Esc>
+inoremap kj <Esc>
+""
 
 "" Clipboard functionality (paste from system)
 vnoremap <leader>y "+y
@@ -14,14 +19,13 @@ set expandtab        " pressing <TAB> inserts spaces
 set formatoptions+=j " remove comment leader when joining lines
 set history=1000
 set hlsearch         " highlight matches
+set ignorecase       " default to case insensitive searching
 set incsearch        " search as characters are entered
 set laststatus=2     " always show statusline
 set lazyredraw
-"" whitespace glyphs
-"set listchars=eol:↵,tab:→,trail:~,extends:>,precedes:<,space:·
-set listchars=eol:↵,tab:➝\ ,trail:~,extends:>,precedes:<,space:·
-
 set list             " show whitespace
+set listchars=eol:↵,tab:➝\ ,trail:~,extends:>,precedes:<,space:·
+set nostartofline    " prevent the cursor from changing the current column when jumping to other lines within the window
 set nu rnu           " toggle hybrid line numbers (`number relativenumber`)
 set ruler            " displays cursor position
 set shiftwidth=4     " indentation setting
@@ -30,10 +34,10 @@ set showmatch        " highlight matching brackets/parens
 set softtabstop=4
 set tabstop=4
 set termguicolors    " true color terminal
-set ttimeoutlen=50   " switc
+set ttimeoutlen=50   " keycode timeout length
 set wildmenu         " visual autocomplete for command menuh quick between modes
-
-let g:rainbow_active = 1    " turn on rainbow brackets
+set ww=<,>,h,l       " wrap to previous/next line when cursor is at line start/end
+let g:rainbow_active = 1 " turn on rainbow brackets
 
 ""
 "" create backup files and save to /tmp
@@ -49,5 +53,6 @@ set rtp+=/usr/local/opt/fzf
 autocmd InsertEnter * set cursorline cursorcolumn norelativenumber
 autocmd InsertLeave * set nocursorline nocursorcolumn relativenumber
 
+syntax enable
 "hi Cursor ctermbg=black     " current line bg=black in Normal mode
 "hi Normal ctermbg=darkgray  " current line bg=darkgray in Insert moden
