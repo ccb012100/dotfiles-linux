@@ -48,6 +48,10 @@ rsync -avuP --progress \
       ~/.dotfiles/HOME/.config/nvim/init.vim \
       ~/.config/nvim/
 
+rsync -avuP --progress \
+      ~/.dotfiles/HOME/.config/broot/config.hjson \
+      ~/.config/broot/
+
 ##############
 # $HOME/.zsh #
 ##############
