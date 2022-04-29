@@ -49,7 +49,7 @@ rsync -avuP --progress \
       ~/.config/nvim/
 
 rsync -avuP --progress \
-      ~/.dotfiles/HOME/.config/broot/config.hjson \
+      ~/.dotfiles/HOME/.config/broot/conf.hjson \
       ~/.config/broot/
 
 ##############
