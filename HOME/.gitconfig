@@ -4,6 +4,7 @@
     filemode = false
 [commit]
     gpgsign = true
+	verbose = true
 [color]
     ui = true
 [pull]
@@ -26,6 +27,7 @@
     co      = checkout
     d       = diff
     ds      = diff --staged
+    dt      = difftool
     f       = forgit
     fl      = forgit log
     fa      = forgit add
@@ -55,10 +57,15 @@
 [mergetool "vscode"]
     cmd = code --wait $MERGED
 [diff]
-    tool = vscode
+    tool = difftastic
+[difftool]
+    prompt = false
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
 [gpg]
     program = gpg
 [pager]
+    difftool = true
     diff = delta
     log = delta
     reflog = delta
