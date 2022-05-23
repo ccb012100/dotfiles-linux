@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # $PATH
-export PATH=~/.forgit/bin:~/.dotnet/tools:/usr/local/go/bin:~/tools:~/.local/bin:$PATH
+export PATH=~/bin:~/.forgit/bin:~/.dotnet/tools:/usr/local/go/bin:~/tools:~/.local/bin:$PATH
 
 export ALTERNATE_EDITOR=""
 export EDITOR="vim"                         # $EDITOR opens in terminal
@@ -90,3 +90,9 @@ source ~/.forgit/forgit.plugin.zsh
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source ~/.config/broot/launcher/bash/br
+source ~/ccb012100/starred_music/search.sh
+
+export PNPM_HOME="/home/bagel/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"

@@ -38,6 +38,8 @@ alias dot-b='dotnet build'
 alias dc='docker compose'
 alias c.='code .'                           # open current directory in VS Code
 alias bat='batcat'
+alias pn='pnpm'
+alias npm='echo "use pn/pnpm"'
 
 # .zshrc
 alias zedit="vim $HOME/.zshrc"
