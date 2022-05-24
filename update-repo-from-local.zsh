@@ -54,6 +54,13 @@ rsync -avuP --progress \
       ~/.config/broot/conf.hjson \
       ~/.dotfiles/HOME/.config/broot/
 
+rsync -avuP --progress \
+      ~/.config/git/attributes \
+      ~/.dotfiles/HOME/.config/git/
+
+rsync -avuP --progress \
+      ~/.config/git/ignore \
+      ~/.dotfiles/HOME/.config/git/
 
 ##############
 # $HOME/.zsh #

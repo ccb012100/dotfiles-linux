@@ -2,6 +2,7 @@
     editor = vim
     autocrlf = input
     filemode = false
+	excludesfile = ~/.config/git/ignore
 [commit]
     gpgsign = true
 	verbose = true
